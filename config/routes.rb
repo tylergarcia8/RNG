@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
 
-  resources :users
+  resources :users do
+    resources :products
+  end
 
-  get 'page/index'
+
   root 'landing#index'
 end
 

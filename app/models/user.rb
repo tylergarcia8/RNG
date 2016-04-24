@@ -11,8 +11,8 @@ validates 	:email,
 			format: {
 			with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 			}
-      
-has_many :products
+
+has_many :products, dependent: :destroy
 
 	def to_s
 		"#{first_name}#{last_name}"
