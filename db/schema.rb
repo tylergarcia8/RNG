@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20160424160343) do
     t.string   "name"
     t.integer  "price"
     t.text     "description"
-    t.integer  "owner_id" # to be removed
-    t.integer  "renter_id" 
+    t.integer  "owner_id" 
+    t.integer  "renter_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
