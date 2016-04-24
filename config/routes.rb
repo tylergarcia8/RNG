@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new', as: 'signup'
   get '/login' => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
-
+  post '/rent/:id' => 'products#rent', as: 'rent'
   resources :users do
     resources :products
   end
