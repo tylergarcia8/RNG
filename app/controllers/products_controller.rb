@@ -18,11 +18,16 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
   end
+  # RENT products
+
+  def rent
+    @product.renter_id = current_user.id
+  end
 
   # POST /products
   def create
     @product = Product.new(product_params)
-
+    @product.user_id = current_user.id
     if @product.save
       redirect_to @product, notice: 'Product was successfully created.'
     else
