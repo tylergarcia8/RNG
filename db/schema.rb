@@ -11,22 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160424194211) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
-=======
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160424185349) do
-=======
-ActiveRecord::Schema.define(version: 20160424160343) do
->>>>>>> 5723b0a480500e8964abda240f05e4b1be0df76f
->>>>>>> 183f6960fd3e4b5ca64deea290915f8c1571b890
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -40,16 +32,14 @@ ActiveRecord::Schema.define(version: 20160424160343) do
     t.integer  "user_id"
   end
 
-<<<<<<< HEAD
+  add_index "products", ["user_id"], name: "index_products_on_user_id"
+
   create_table "profiles", force: :cascade do |t|
     t.text     "bio"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-=======
-  add_index "products", ["user_id"], name: "index_products_on_user_id"
->>>>>>> 5723b0a480500e8964abda240f05e4b1be0df76f
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

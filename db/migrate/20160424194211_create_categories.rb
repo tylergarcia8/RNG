@@ -4,7 +4,7 @@ class CreateCategories < ActiveRecord::Migration
       t.string :category_name
       t.text :description
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
