@@ -19,11 +19,20 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
   end
+  # RENT products
+
+  def rent
+    @product = Product.find(params[:id])
+    @product.renter_id = current_user.id
+    @product.save
+    redirect_to products_path
+
+  end
 
   # POST /products
   def create
     @product = Product.new(product_params)
-
+    @product.owner_id = current_user.id
     if @product.save
       redirect_to @product, notice: 'Product was successfully created.'
     else
@@ -54,6 +63,6 @@ class ProductsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:name, :price, :description, :owner_id, :renter_id, :category_id)
+      params.require(:product).permit(:name, :price, :description, :user_id, :renter_id, :category_id, :id)
     end
 end
