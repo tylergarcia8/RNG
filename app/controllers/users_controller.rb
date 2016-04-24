@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate, except: :create
   # GET /users
   def index
     @users = User.all
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'User was successfully created.'
+      redirect_to user_page_index_path(current_user.id), notice: 'User was successfully created.'
     else
       render :new
     end
