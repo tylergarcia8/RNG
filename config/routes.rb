@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :products
   resources :products
   resources :sessions, only: [:new, :create, :destroy]
@@ -12,10 +13,13 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  resources :users do
+    resources :profiles
 
+    get 'page/index'
+
+  end
   root 'landing#index'
-end
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -69,3 +73,4 @@ end
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     #   end
+end
