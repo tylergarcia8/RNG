@@ -31,8 +31,9 @@
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         <% if current_user.id != product.owner_id %>
-        <td><%= link_to 'Rent', rent_path(product), method: :post %>
+        <td><%= link_to 'Pay', new_charge_path(:product_id =>  product.id) %>
         <% end %>
+        <td>
       </tr>
     <% end %>
   </tbody>

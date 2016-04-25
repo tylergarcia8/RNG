@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :products
   end
+  
+  resources :charges
 
   resources :users do
     resources :profiles
