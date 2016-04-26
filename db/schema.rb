@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426004452) do
+ActiveRecord::Schema.define(version: 20160426025836) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "city"
+    t.string   "region"
+    t.string   "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +55,9 @@ ActiveRecord::Schema.define(version: 20160426004452) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "location_id"
   end
+
+  add_index "users", ["location_id"], name: "index_users_on_location_id"
 
 end

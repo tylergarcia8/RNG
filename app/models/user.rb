@@ -15,6 +15,8 @@ validates 	:email,
 
 has_one :profile
 has_many :products, dependent: :destroy
+has_one :location
+
 
 
 	def to_s

@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :user
+  belongs_to :location
   belongs_to :category
 
   validates :name, :description, :category_id, presence: true
