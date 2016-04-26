@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Profile', user_page_index_path(current_user) %><p id="notice"><%= notice %></p>
 
+
+<%= p @location.products %>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
