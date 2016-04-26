@@ -1,8 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Questrial);
 @import url(http://fonts.googleapis.com/css?family=Dancing+Script:700);
 
-html,
+html {
+  max-width: 100%;
+  height: 100%;
+}
+
 body {
+  margin: 0;
     width: 100%;
     height: 100%;
 }
@@ -18,40 +23,38 @@ hr {
 .cursive {
     font-family: 'Dancing Script', cursive;
     text-transform: none;
+    margin-bottom: 100px;
 }
+
 @media(min-width:768px) {
     .navbar-default {
         border-color: transparent;
         background-color: transparent;
         min-height: 60px;
     }
-
-    .navbar-default.affix .nav > li>a:hover,
-    .navbar-default.affix .nav>li>a:focus:hover {
-        color: #9c27b0;
-    }
 }
 
 header {
-    position: relative;
-    min-height: auto;
-    text-align: center;
-    color: #fff;
-    width: auto;
-    background-color: #c9c9c9;
-    background-image: url('http://bizble.com/img/home-poly1.jpg');
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  height: 100%;
+  position: relative;
+  min-height: auto;
+  color: #fff;
+  width: auto;
+  background-color: #c9c9c9;
+  background-image: url('http://bizble.com/img/home-poly1.jpg');
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-header .header-content {
-    /*position: relative;*/
-    width: 80%;
+.header-content {
     text-align: center;
-    z-index: 2;
 }
 
 @media(min-width:768px) {
@@ -62,20 +65,6 @@ header .header-content {
     header {
         min-height: 100%;
     }
-
-    header .header-content {
-        position: absolute;
-        top: 50%;
-        padding: 0 0px;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
-
-    header .header-content .inner h1 {
-        font-size: 80px;
-    }
-
    
     section {
         min-height: 600px;
@@ -83,6 +72,10 @@ header .header-content {
     }
 
 }
+
+    header  h1 {
+        font-size: 80px;
+    }
 
 .btn.btn-primary {
     background-color: transparent;
