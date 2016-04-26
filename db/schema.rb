@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160426025836) do
+=======
+ActiveRecord::Schema.define(version: 20160426001522) do
+>>>>>>> 4999f38e3ca9a5d5c3b7c0fa7d23ab17a14edf31
 
   create_table "categories", force: :cascade do |t|
-    t.string   "category_name"
-    t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
@@ -34,13 +37,13 @@ ActiveRecord::Schema.define(version: 20160426025836) do
     t.text     "description"
     t.integer  "owner_id"
     t.integer  "renter_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "user_id"
-    t.integer  "category_id"
+    t.string   "category_name"
+    t.string   "category_id"
   end
 
-  add_index "products", ["category_id"], name: "index_products_on_category_id"
   add_index "products", ["user_id"], name: "index_products_on_user_id"
 
   create_table "profiles", force: :cascade do |t|

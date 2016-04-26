@@ -25,7 +25,8 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.select :category_id, options_for_select( Category.all.collect{ |c| [c.name, c.id] })
+ %>
   </div>
   <div class="actions">
     <%= f.submit %>
