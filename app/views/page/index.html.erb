@@ -1,6 +1,7 @@
 <h1>Profile Page</h1>
 <p>Find me in app/views/page/index.html.erb</p>
 
+<%= link_to 'Update Your Location', new_location_path %> |
 <%= link_to 'Edit', edit_user_path(current_user) %> |
-<%= link_to 'Rent A Product', location_path %> |
+<%= link_to 'Rent A Product', locations_path %> |
 <%= link_to 'Post A Product', new_product_path %>

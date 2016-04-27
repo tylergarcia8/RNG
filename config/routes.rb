@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :locations do
+    resources :products
+  end
+
   resources :categories
   resources :products
   resources :sessions, only: [:new, :create, :destroy]
