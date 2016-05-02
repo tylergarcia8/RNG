@@ -19,15 +19,11 @@ pre {
 }
 
 a {
-  color: #000;
+  color: black;
 
   &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
+    color: black;
+    margin: 1%;
   }
 }
 
@@ -70,4 +66,7 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+.btn-margin {
+  margin: 0px 2px;
 }
