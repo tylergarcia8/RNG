@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Profile', user_page_index_path(current_user) %><p id="notice"><%= notice %></p>
 
+
+<%= p @location.products %>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -11,15 +13,13 @@
 </p>
 
 <p>
-  <strong>Description:Golf Clubs for 2 weeks $123.00</strong>
-  <!-- <%= @product.description %> -->
+  <%= @product.description %>
 </p>
 <br>
 <img class="show_image" src="http://www.hittingthegreen.com/wp-content/uploads/2011/11/prosimmon_golf_x9_clubs1.jpg" alt="google/images">
 
 <p>
-  <strong>Owner: @mbusta305</strong>
-  <!-- <%= @product.owner_id %> -->
+  <%= @product.owner_id %>
 </p>
 
 <p>
@@ -28,8 +28,8 @@
 </p>
 
 <p>
-  <strong>Category: Outdoor Sports</strong>
-  <!-- <%= @product.category_id %> -->
+  <strong>Category:</strong>
+  <%= @product.category_id %>
 </p>
 <% if current_user.id == @product.owner_id %>
 <%= link_to 'Edit', edit_product_path(@product) %> |

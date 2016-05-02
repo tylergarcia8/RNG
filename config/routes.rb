@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :locations do
+    resources :products
+  end
+
   resources :categories
   resources :products
   resources :sessions, only: [:new, :create, :destroy]
@@ -9,10 +13,12 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
   post '/rent/:id' => 'products#rent', as: 'rent'
+
+
   resources :users do
     resources :products
   end
-  
+
   resources :charges
 
   resources :users do
