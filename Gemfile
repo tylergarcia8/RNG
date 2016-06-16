@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'stripe'
+
 gem 'traceroute'
+
 gem 'hirb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -48,5 +50,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+gem "paperclip", "~> 4.3"
 
 gem 'pry-rails'

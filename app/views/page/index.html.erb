@@ -1,7 +1,88 @@
-<h1>Profile Page</h1>
-<p>Find me in app/views/page/index.html.erb</p>
+<div class="row well">
+  <div class="pull-left">
 
-<%= link_to 'Update Your Location', new_location_path %> |
-<%= link_to 'Edit', edit_user_path(current_user) %> |
-<%= link_to 'Rent A Product', categories_path %> |
-<%= link_to 'Post A Product', new_product_path %>
+    <div id="user_header">
+      <% if current_user %>
+    	Logged in as <%= current_user.email %>.
+    	<%= link_to "Log Out", logout_path %>
+      <% else %>
+    	<%= link_to "Sign Up", signup_path %> or
+    	<%= link_to "Log In", login_path %>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="pull-right">
+    <button class="btn btn-primary" type="button">Home</button>
+    <button class="btn btn-primary" type="button">Profile</button>
+    <button class="btn btn-primary" type="button">Settings</button>
+    <button class="btn btn-primary" type="button">Log Out</button>
+  </div>
+</div>
+
+<div class="well">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="gearbox">
+        <h1 class="text-center lead gear-header">Profile</h1>
+        <%= link_to 'MESSAGES', products_path, :class => "btn btn-info" %>
+        <%= link_to 'POST UP',new_product_path , :class => "btn btn-info" %>
+        <%= link_to 'RENT',products_path, :class => "btn btn-info" %>
+        <%= link_to 'BACK', users_path, :class => "btn btn-info" %>
+      </div>
+      <div class="gearbox">
+        <h3 class="text-center lead gear-header">My Garage</h3>
+        <button class="btn btn-primary" type="button">Compare Rentals</button>
+        <button class="btn btn-primary" type="button">Reviews</button>
+        <button class="btn btn-primary" type="button">Past Rentals</button>
+        <button class="btn btn-primary" type="button">Log Out</button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <section >
+            <img class="img-circle img-responsive center-block" style="width: 200px; height: 200px" src="https://media.licdn.com/media/AAEAAQAAAAAAAAIvAAAAJDMzMmM5YjVlLTIxNWYtNGRkZS04NzFiLWYwMzk1ZTk4NDExNQ.jpg" alt="Adamn Sandlers/Linkedin" />
+          </section>
+          <br>
+          <br>
+          <div class="well text-center">
+
+            <p>Username: @Billy@Madison.co<p>
+            <p>Location: Miami<p>
+            <p>Member Since: 2015<p>
+            <p>Born & raised in Miami So I know the city very well! I live with my Girlfriend Alyssa and our dog Ziggy! We are very Adventurous and love all outdoor activities! Please check out our gear and see if you need anything for rent! We have awsome Stand Up Paddle boards, a few bikes and even Golf Clubs! Feel free to Message us even if you just want some information on Miami!<p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="col-md-12">
+        <h3 class="text-center lead gear-header">Local Rentals</h3>
+        <div class="row">
+          <a href="http://localhost:3000/products">
+            <img class="img-responsive img-rounded custom-image" src="https://s-media-cache-ak0.pinimg.com/736x/07/a9/bd/07a9bdf5a946a60b6f08fdac2881982f.jpg" alt="google/images">
+          </a>
+
+          <span class="badge custom-badge">$40</span>
+        </div>
+        <div class="row">
+          <a href="http://localhost:3000/products">
+            <img class="img-responsive img-rounded custom-image" src="http://www.golfclubhybrid.com/img//2010/02/history-of-golf-clubs.jpg" alt="google/images">
+          </a>
+
+          <span class="badge custom-badge" >$25</span>
+        </div>
+        <div class="row">
+          <a href="http://localhost:3000/products">
+            <img class="img-responsive img-rounded custom-image" src=" https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRtKp4oswA9309tmaKiS06IJ42T--boVz0KbimKdIUH8K6pKHbe" alt="google/images">
+          </a>
+
+          <span class="badge custom-badge">$32</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

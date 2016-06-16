@@ -33,11 +33,15 @@ ActiveRecord::Schema.define(version: 20160426222842) do
     t.text     "description"
     t.integer  "owner_id"
     t.integer  "renter_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.integer  "category_id"
     t.integer  "location_id"
+    t.string   "product_pic_file_name"
+    t.string   "product_pic_content_type"
+    t.integer  "product_pic_file_size"
+    t.datetime "product_pic_updated_at"
   end
 
   add_index "products", ["location_id"], name: "index_products_on_location_id"

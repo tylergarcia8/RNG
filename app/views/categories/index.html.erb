@@ -1,11 +1,11 @@
 <section class= "categories container" id= "shop">
-<tbody>
-<% @categories.each do |category| %>
-<tr>
-        <a href= "/charges#show" class= "categories"> <td><%= category.name %></td> </a>
-        </tr>
-        <% end %>
-          </tbody>
+	<tbody>
+		<% @categories.each do |category| %>
+		<tr>
+			<a href= "/charges#show" class= "categories"> <td><%= category.name %></td> </a>
+		</tr>
+		<% end %>
+	</tbody>
 </table>
 
 <%= link_to 'New Category', new_category_path, class: 'new_category b' %>

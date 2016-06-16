@@ -13,12 +13,12 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @product.description %>
 </p>
+<br>
+<img class="show_image" src="http://www.hittingthegreen.com/wp-content/uploads/2011/11/prosimmon_golf_x9_clubs1.jpg" alt="google/images">
 
 <p>
-  <strong>Owner:</strong>
   <%= @product.owner_id %>
 </p>
 
@@ -34,4 +34,4 @@
 <% if current_user.id == @product.owner_id %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <% end %>
-<%= link_to 'Back', products_path %>
+<td class="btn btn-primary"><%= link_to 'Back', products_path %></td>
